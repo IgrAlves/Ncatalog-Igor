@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>N Catalog</title>
+{% endblock %}
+{% block content %}
+    <form action="{% url 'adicionar_item' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{forms.as_p}}
+      <button type="submit" class="btn" style="background-color: #F69834;">Criar Item</button>
+    </form>
+    <!--Footer Início-->  
+  {% include 'partials/_footer.html' %}
+    
+  <!--Footer Fim-->  
+{% endblock %}

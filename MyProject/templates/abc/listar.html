@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>N Catalog</title>
+{% endblock %}
+{% block content %}
+{% for produto in cards %}
+<div class="col">
+    <div class="row row-cols-1 row-cols-md-4 g-4 text-center padding cel">
+        <div class="gallery-item h-100 card">
+            <img src="{{ produto.image.url }}" class="card-img-top h-75" alt="{{ produto.name }}">
+            <div class="gallery-links d-flex align-items-center justify-content-center">
+                <strong>{{produto.name}}</strong>
+                <a href="{% url 'visualizar_item' produto.id %}" class="btn" style="background-color: #F69834;">Visualizar</a>
+            </div>
+        </div>
+    </div>
+</div>    
+<!--Footer Início-->  
+{% endfor %}
+
+{% include 'partials/_footer.html' %}
+
+{% endblock %}

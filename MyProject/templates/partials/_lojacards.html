@@ -1,0 +1,19 @@
+{% load static %}
+<div class="text-white" style="background-color: #161616;">
+    <div class="text-center interno internobottom cel">
+        <h1><a name="cursos"></a>Roupas</h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4 text-center padding cel">
+        {% for produto in card %}
+        <div class="col">
+            <div class="card">
+                <img src="{{produto.image.url}}" class="card-img-top h-75" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ produto.title }}</h5>
+                    <p class="card-text">descrição: {{produto.descript}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

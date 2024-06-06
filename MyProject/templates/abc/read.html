@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>N Catalog</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+  {%if produto.image %}
+  <img src="{{produto.image.url}}" alt="item.name" width="200px" height="200px">
+  {%endif%}
+  <br>
+  <strong>Titulo:</strong>{{produto.title}}
+  <br>
+  <strong>Descrição:</strong>{{produto.descript}}
+  <br>
+  <a href="{% url 'editar_item' produto.id %}" class="btn btn-warning">Editar</a>
+  <a href="{% url 'deletar_item' produto.id %}" class="btn btn-danger">Deletar</a>
+</div>  
+  {% include 'partials/_footer.html' %}
+     
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>N Catalog</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+  {%if produto.image %}
+  <img src="{{produto.path.url}}" alt="item.name" width="200px" height="200px">
+  {%endif%}
+<form action="{% url 'atualizar_item' produto.id %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit" class= "btn" style="background-color: #F69834;">Atualizar</div>
+</form>
+</div>
+
+  {% include 'partials/_footer.html' %}
+    
+  <!--Footer Fim-->  
+{% endblock %}

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block title %}
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <script src="{% static 'assets/js/bootstrap.bundle.js' %}"></script>
+    </head>
+    <style>
+        .background{
+            background-color: #014073;
+        }
+        .text-color{
+            color: #f1f1f1;
+        }
+        .space{
+            margin-top: 4em;
+        }
+        .colorblue{
+            color: #014073;
+        }
+        .interno{
+            padding-top: 2em;
+        }
+        .internobottom{
+            padding-bottom: 4em;
+        }
+        .padding{
+            padding: 2em;
+        }
+        html{
+            overflow-x: hidden;
+        }
+		@media screen and (max-width: 600px){
+			.cel{
+				width: 100%
+			}
+		}
+    </style>
+    <body>
+
+    {% block content %} 
+    {% endblock %}
+
+	</body>
+</html>
